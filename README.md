@@ -1,9 +1,9 @@
-# sass-base-2022
+# Project-6
 
 ## Clone to update base system - Klona för att uppdatera bassystemet
-`git clone https://github.com/Jonasodiq/sass-base-2022.git .`
+`git clone https://github.com/Jonasodiq/project-6.git .`
 ## Use as new project - Använd som nytt projekt
-`git clone https://github.com/Jonasodiq/sass-base-2022.git . && rm -rf .git`
+`git clone https://github.com/Jonasodiq/project-6.git . && rm -rf .git`
 
 ## Develop
-`sass --watch src/scss/style.scss style.css`
+sass --watch src/scss/style.scss style.css
