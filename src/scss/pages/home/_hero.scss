@@ -1,3 +1,89 @@
+@use '../../components/buttons' as button;
+@use '../../utilities/responsive';
+
 .hero {
-    background-color: black;
+    min-height: 100vh;
+    background: url(assets/images/hero-background@2x.jpg) no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        // background-color: #000; //temp
+        display: grid;
+        grid-template-rows:100px 1fr 100px;
+        grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+        align-items: center;
+        position: relative;
+    }
+
+    &__main {
+        grid-area: main;
+        position: relative;
+
+        @include responsive.max(30rem) {
+            padding: var(--gap-m) var(--gap-m);
+        } 
+    }
+
+    &__footer {
+        grid-area: footer;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 var(--gap-m);
+        position: relative;
+    }
+
+    &__content {
+        max-width: 60rem;
+        width: 100%;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-m);
+        
+        @include responsive.max(40rem){
+            justify-content: center;
+            gap: var(--gap-s);
+        }
+    }
+
+    &__button {
+        @include button.default();
+        font-size: var(--font-size-3);
+
+        &-red {
+            @include button.default(
+            $background: var(--color-red));
+
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__more {
+        padding: 0 1rem;
+        color: #fff
+    }
+
+    &__social {
+      
+    }
+    
+}
+
+.facebook {
+    
+    padding-right: 10px;
+    
 }
