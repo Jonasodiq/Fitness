@@ -1,0 +1,112 @@
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    // align-items: center;
+    gap: var(--gap-l);
+    position: relative;
+
+    &__list {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        position: relative; 
+        padding: 15px 0;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #fff;
+        transition: color 0.2s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            bottom: 10px;
+            left: 0;
+            background-color: red;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover:before {
+            transform: scaleX(1);
+        }
+    }
+
+    &-button {
+        height: 26px;
+        width: 26px;
+        position: relative;
+        background: none;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+
+        &:focus, &--close {
+
+            .menu-button__hamburger {
+                transition: transform 0.2s 0.2s;
+                transform: rotate(45deg) translate(-50%, -50%);
+                background-color: red;
+                
+                &:before {
+                    transition: top 0.2s, transform 0.2s 0.2s;
+                    transform: rotate(95deg) translate(0, 0);
+                    top: 0;
+                }
+
+                &:after {
+                    transition: width 0.2s;
+                    width: 0;
+                }
+            }
+        }
+        
+        &__hamburger {
+            transform-origin: left top;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transition: transform 0.2s;
+            transform: translate(-50%, -50%) rotate(0);
+            background-color: #fff;
+    
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -8px;
+                height: 2px;
+                width: 100%;
+                background-color: inherit;
+            }
+    
+            &:before {
+                transition: top 0.2s 0.2s, transform 0.2s;
+            }
+    
+            &:after {
+                top: 8px;
+                width: 70%;
+                transition: width 0.2s 0.2s;
+            }
+        }
+    }
+}
+
+
+
+
+
+    
