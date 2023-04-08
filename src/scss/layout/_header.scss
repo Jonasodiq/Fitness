@@ -1,0 +1,24 @@
+.header {
+    position: fixed;
+    z-index: 999;
+    height: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+
+        &:hover  {
+        fill: red;
+        }
+    }
+
+}
