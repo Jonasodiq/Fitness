@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: var(--font-size-6);
+    font-style: oblique;
+    color: #fff;
 }
 
 h2 {
@@ -39,12 +41,9 @@ p {
 }
 
 a {
-    color: var(--color-dark);
     text-decoration: none;
-    line-height: var(--line-height);
-    &:hover {
-        color: var(--color-accent);
-    }
+    font-style: oblique;
+    font-size: var(--font-size-2);
 }
 
 li {
