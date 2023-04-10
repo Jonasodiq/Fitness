@@ -36,7 +36,7 @@
   --font-sans: "Abolition", sans-serif;
   --font-serif: "Industry", sans-serif;
   --line-height: 1.5;
-  --font-size-0: 0.75;
+  --font-size-0: 0.75rem;
   --font-size: 1rem;
   --font-size-1: 2rem;
   --font-scale: 1.25;
@@ -72,13 +72,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-style: oblique;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
   font-size: var(--font-size-6);
-  font-style: oblique;
-  color: #fff;
 }
 
 h2 {
@@ -102,11 +103,7 @@ h6 {
 }
 
 p {
-  line-height: var(--line-height);
-}
-
-p {
-  line-height: var(--line-height);
+  font-family: var(--font-serif);
 }
 
 a {
@@ -120,6 +117,7 @@ li {
 }
 
 .header {
+  background-color: rgba(0, 0, 0, 0.1882352941);
   position: fixed;
   z-index: 999;
   height: 100px;
@@ -264,6 +262,11 @@ li {
   max-width: 60rem;
   width: 100%;
 }
+.hero__title {
+  margin: 2rem 0;
+  font-size: var(--font-size-7);
+  color: #fff;
+}
 .hero__buttons {
   display: flex;
   flex-wrap: wrap;
@@ -316,6 +319,136 @@ li {
 }
 .facebook {
   padding-right: 10px;
+}
+
+.promo {
+  height: 20rem;
+  display: grid;
+  grid-template-columns: var(--grid-container);
+}
+.promo__inner {
+  grid-column: inner;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promo__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promo__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 400px;
+  height: 200px;
+  background-image: url(assets/images/card-2.jpg);
+  background-repeat: no-repeat;
+  padding: 20px 0 0 40px;
+  margin: 0 20px;
+}
+.promo__card.promo__card-1 {
+  background-image: url(assets/images/card-1.jpg);
+}
+.promo__header {
+  color: #b0b0b0;
+}
+.promo__header-2 {
+  color: #000;
+}
+.promo__title-1 {
+  color: #fff;
+}
+.promo__title-2 {
+  color: red;
+}
+.promo__descr {
+  color: rgba(255, 255, 255, 0.3725490196);
+  font-size: 11px;
+  margin: 0;
+}
+.promo__arrow-2 {
+  transform: translate(320px, 13px);
+}
+.promo__arrow-21 {
+  transform: translate(320px, 6px);
+}
+
+.news {
+  height: 20rem;
+  display: grid;
+  grid-template-columns: var(--grid-container);
+}
+.news__inner {
+  grid-column: inner;
+  display: grid;
+  min-width: 100vh;
+  width: 100%;
+  grid-template-rows: 160px 560px 560px;
+  grid-template-columns: 420px 420px 440px;
+  grid-template-areas: "news__header news__header news__header" "news__main news__main news__sidebar-1" "news__main news__main news__sidebar-2";
+}
+.news__header {
+  grid-area: news__header;
+  color: #3F4A53;
+  margin-top: 20px;
+}
+.news__meta {
+  color: rgba(67, 86, 101, 0.8);
+  font-family: "Industry";
+  font-size: 18px;
+}
+.news__title {
+  margin: 20px 0;
+}
+.news__main {
+  grid-area: news__main;
+  color: #3F4A53;
+  padding-right: 6rem;
+}
+.news__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-m);
+}
+@media screen and (max-width: 40rem) {
+  .news__footer {
+    justify-content: center;
+    gap: var(--gap-s);
+  }
+}
+.news__button {
+  font-size: var(--font-size-2);
+  margin-top: 0.5rem;
+  color: #3F4A53;
+}
+.news__button-red {
+  background-color: var(--color-red);
+  color: var(--color-light);
+  padding: 1rem 2rem;
+  border: 0;
+  transform: skew(-10deg);
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-2);
+}
+.news__button-red:hover {
+  background-color: var(--color-accent-200);
+  color: var(--color-light);
+}
+.news__sidebar-1 {
+  grid-area: news__sidebar-1;
+  color: #3F4A53;
+}
+.news__sidebar-2 {
+  padding-top: 6rem;
+  grid-area: news__sidebar-2;
+  color: #3F4A53;
 }
 
 /*# sourceMappingURL=style.css.map */
