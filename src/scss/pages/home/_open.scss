@@ -1,0 +1,109 @@
+.open {
+    // background: rgb(215, 215, 215);
+    height: 48rem;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        display: grid;
+        grid-template-rows:100px 1fr;
+        grid-template-areas: 
+        'open__header'
+        'open__main';
+    }
+    
+    &__content {
+        // display: flex;
+        // justify-items: space-between;
+        // align-self: space-between;
+        
+    }
+    
+    &__header {
+        grid-area: open__header;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        color: #3F4A53
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__text {
+        margin-bottom: -12px;
+        color: var(--color-accent-200)
+    }
+    
+    &__main {
+        grid-area: open__main;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__card {
+        width: 26rem;
+        height: 30rem;
+        padding: 2.5rem;
+        margin: 10;
+
+        
+        &--title {
+            padding-bottom: 20px;
+        }
+
+        &-1 {
+            background-color:#435665;
+            color: white;
+        }
+
+        &--description {
+            margin-top: 20px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4)
+        }
+    
+    }    
+    
+    &__rec {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 80px solid #ffffff33;
+        border-left: 80px solid transparent;
+        transform: translate(296px, -40px);
+    }
+
+}
+.day-5 {
+    color: #0584FF;
+    &-dark {
+        color: red;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: var(--font-indst);
+    font-style: demi;
+
+}
+
+td {
+    text-align: left;
+    padding: 10px;
+}
+
+td:nth-child(even) {
+    font-style: book;
+    text-align: right;
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+.open__card-1 tr:nth-child(odd) {background-color: rgba(255, 255, 255, 0.07);}
