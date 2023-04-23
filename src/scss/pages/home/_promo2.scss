@@ -1,7 +1,8 @@
 .promo2 {
-    height: 20rem;
+    height: 23rem;
     display: grid;
     grid-template-columns: var(--grid-container);
+    margin: 3rem 0;
     
     &__inner {
         grid-column: inner;
@@ -21,11 +22,12 @@
     &__content {
         position: absolute;
         margin-left: 4rem;
-        color: #fff;
+        color: #ffffffbb;
     }
     
     &__title {
-        margin: 2rem 0;
+        margin: 1rem 0;
+        color: #ffffffff;
     }
 
     &__rec {
