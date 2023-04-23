@@ -1,5 +1,4 @@
 .open {
-    // background: rgb(215, 215, 215);
     height: 48rem;
     display: grid;
     grid-template-columns: var(--grid-container);
@@ -11,13 +10,6 @@
         grid-template-areas: 
         'open__header'
         'open__main';
-    }
-    
-    &__content {
-        // display: flex;
-        // justify-items: space-between;
-        // align-self: space-between;
-        
     }
     
     &__header {
@@ -52,8 +44,7 @@
         height: 30rem;
         padding: 2.5rem;
         margin: 10;
-
-        
+   
         &--title {
             padding-bottom: 20px;
         }
