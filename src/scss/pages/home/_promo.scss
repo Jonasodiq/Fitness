@@ -57,10 +57,28 @@
     }
 
     &__arrow-2 {
-        transform: translate( 320px, 13px );
-        &1 {
-        transform: translate( 320px, 6px );
+        transform: translate( 318px, 13px );
+        transition: color 0.2s;
+
+        &:hover {
+            transform: translate( 324px, 13px);
+            transition: transform 0.2s;
+            svg path {
+                fill: red; // ! fixa color
+            }
         }
     }
 
+    &__arrow-21 {
+        transform: translate( 318px, 6px );
+        transition: color 0.2s;
+        
+        &:hover {
+            transform: translate( 324px, 6px);
+            transition: transform 0.2s;
+            svg path {
+                fill: red; // ! fixa color
+            }
+        }
+    }
 }
