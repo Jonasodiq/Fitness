@@ -17,6 +17,7 @@
         color: white;
     }
 
+
     &__text {
         font-style: bold;
     }
@@ -36,6 +37,26 @@
         color: #ffffff80;
     }
 }
+
+.scroll-up {
+    position: fixed;
+    right: 30px;
+    bottom: 64px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 0;
+    background: #fffcf2;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+        background-color: #f11448;
+    }
+}
+
 
 #map {
   width: 100%;
