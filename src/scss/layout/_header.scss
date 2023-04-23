@@ -15,11 +15,10 @@
         align-items: center;
     }
 
-    &__logo {
-
-        &:hover  {
-        fill: red;
+    &__branding {
+        
+        &:hover {
+            .header__logo { fill: red;}
         }
     }
-
 }
