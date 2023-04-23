@@ -10,7 +10,6 @@
 
     &__inner {
         grid-column: inner;
-        // background-color: #000; //temp
         display: grid;
         grid-template-rows:100px 1fr 100px;
         grid-template-areas: 
@@ -74,19 +73,42 @@
     &__arrow {
         display: flex;
         justify-content: space-between;
+        transition: color 0.5s;
 
+        &:hover {
+            transform: translate(0, 0.2rem);
+            transition: transform 0.5s;
+            color: red;
+            
+            svg path {
+                fill: red;
+            }
+        }
     }
 
     &__more {
         padding: 0 1rem;
-        color: #fff
+        color: #fff;
     }
 
     &__social {
-      
+
     } 
 }
 
 .facebook {
     padding-right: 10px;
+    transition: color 0.2s;
+
+    &:hover {
+        svg path { fill: red};
+        transition: transform 0.2s;
+    }
+}
+
+.instagram {
+
+    &:hover {
+        svg path { fill: red}
+    }
 }
