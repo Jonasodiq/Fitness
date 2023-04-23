@@ -53,9 +53,13 @@
     }
 
     &__button {
-        font-size: var(--font-size-2);
-        margin-top: 0.5rem;
+        font-family: var(--font-abo);
+        font-size: var(--font-size-3);
         color: #3F4A53;
+
+        &:hover {
+            color: var(--color-accent); 
+        }
 
         &-red {
             @include button.default(
