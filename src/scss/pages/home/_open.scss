@@ -83,8 +83,6 @@ table {
     border-collapse: collapse;
     width: 100%;
     font-family: var(--font-indst);
-    font-style: demi;
-
 }
 
 td {
@@ -92,9 +90,14 @@ td {
     padding: 10px;
 }
 
-td:nth-child(even) {
-    font-style: book;
-    text-align: right;
+td:nth-child(odd) {
+    font-weight: 600;
 }
+
+td:nth-child(even) {
+    text-align: right;   
+}
+
 tr:nth-child(odd) {background-color: #f2f2f2;}
+
 .open__card-1 tr:nth-child(odd) {background-color: rgba(255, 255, 255, 0.07);}
