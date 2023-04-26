@@ -77,6 +77,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-abo);
   font-style: oblique;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -138,6 +139,9 @@ li {
   justify-content: space-between;
   align-items: center;
 }
+.header__branding {
+  transition: all 0.35s ease;
+}
 .header__branding:hover .header__logo {
   fill: red;
 }
@@ -162,9 +166,8 @@ li {
   padding: 15px 0;
   font-family: var(--font-abo);
   font-size: var(--font-size-2);
-  text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
   color: #fff;
   transition: color 0.2s;
 }
@@ -246,7 +249,7 @@ li {
   position: relative;
   z-index: 2;
 }
-.footer__content {
+.footer__contact {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -254,7 +257,7 @@ li {
   color: white;
 }
 .footer__text {
-  font-style: bold;
+  font-weight: 600;
 }
 .footer__share {
   display: flex;
@@ -299,6 +302,7 @@ li {
   min-height: 100vh;
   background: url(assets/images/hero-background@2x.jpg) no-repeat;
   background-size: cover;
+  background-position: left;
   display: grid;
   grid-template-columns: var(--grid-container);
 }
@@ -354,7 +358,7 @@ li {
   transform: skew(-10deg);
   font-family: var(--font-abo);
   font-size: var(--font-size-3);
-  font-weight: 700;
+  font-weight: normal;
   display: inline-block;
   text-decoration: none;
   font-size: var(--font-size-3);
@@ -371,7 +375,7 @@ li {
   transform: skew(-10deg);
   font-family: var(--font-abo);
   font-size: var(--font-size-3);
-  font-weight: 700;
+  font-weight: normal;
   display: inline-block;
   text-decoration: none;
 }
@@ -382,11 +386,10 @@ li {
 .hero__arrow {
   display: flex;
   justify-content: space-between;
-  transition: color 0.5s;
+  transition: transform 0.5s;
 }
 .hero__arrow:hover {
-  transform: translate(0, 0.2rem);
-  transition: transform 0.5s;
+  transform: translate(0, 0.3rem);
   color: red;
 }
 .hero__arrow:hover svg path {
@@ -462,10 +465,10 @@ li {
 .promo__arrow-2 {
   transform: translate(318px, 13px);
   transition: color 0.2s;
+  transition: transform 0.2s;
 }
 .promo__arrow-2:hover {
   transform: translate(324px, 13px);
-  transition: transform 0.2s;
 }
 .promo__arrow-2:hover svg path {
   fill: red;
@@ -473,10 +476,10 @@ li {
 .promo__arrow-21 {
   transform: translate(318px, 6px);
   transition: color 0.2s;
+  transition: transform 0.2s;
 }
 .promo__arrow-21:hover {
   transform: translate(324px, 6px);
-  transition: transform 0.2s;
 }
 .promo__arrow-21:hover svg path {
   fill: red;
@@ -495,6 +498,7 @@ li {
   align-items: center;
 }
 .promo2__img {
+  position: relative;
   width: 100%;
   height: 370px;
   background-image: url(assets/images/promo2@2x.jpg);
@@ -502,23 +506,34 @@ li {
   background-position: center;
 }
 .promo2__content {
-  position: absolute;
-  margin-left: 4rem;
+  padding: 5rem;
   color: rgba(255, 255, 255, 0.7333333333);
 }
 .promo2__title {
   margin: 1rem 0;
-  color: white;
+  color: #fff;
 }
 .promo2__rec {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   width: 0;
   height: 0;
   border-bottom: 80px solid #0584FF;
   border-left: 80px solid transparent;
-  transform: translate(-80px, 144px);
 }
 .promo2__arrow-2 {
-  transform: translate(-440px, 156px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(-14px, 70px);
+  transition: transform 0.2s;
+}
+.promo2__arrow-2:hover {
+  transform: translate(-8px, 70px);
+}
+.promo2__arrow-2:hover svg path {
+  fill: red;
 }
 
 .news {
@@ -531,8 +546,6 @@ li {
   display: grid;
   min-width: 100vh;
   width: 100%;
-  grid-template-rows: 160px 560px 560px;
-  grid-template-columns: 420px 420px 440px;
   grid-template-areas: "news__header news__header news__header" "news__main news__main news__sidebar-1" "news__main news__main news__sidebar-2";
 }
 .news__header {
@@ -567,6 +580,7 @@ li {
   font-family: var(--font-abo);
   font-size: var(--font-size-3);
   color: #3F4A53;
+  padding: 0.5rem;
 }
 .news__button:hover {
   color: var(--color-accent);
@@ -579,11 +593,10 @@ li {
   transform: skew(-10deg);
   font-family: var(--font-abo);
   font-size: var(--font-size-3);
-  font-weight: 700;
+  font-weight: normal;
   display: inline-block;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-size: var(--font-size-2);
 }
 .news__button-red:hover {
   background-color: var(--color-accent-200);
@@ -671,7 +684,6 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-family: var(--font-indst);
-  font-style: demi;
 }
 
 td {
@@ -679,8 +691,11 @@ td {
   padding: 10px;
 }
 
+td:nth-child(odd) {
+  font-weight: 600;
+}
+
 td:nth-child(even) {
-  font-style: book;
   text-align: right;
 }
 
