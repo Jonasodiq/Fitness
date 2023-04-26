@@ -8,9 +8,9 @@
     grid-column: inner;
     position: relative;
     z-index: 2;
-    }
-    
-    &__contact {
+}
+
+&__content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
