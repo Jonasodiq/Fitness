@@ -249,7 +249,7 @@ li {
   position: relative;
   z-index: 2;
 }
-.footer__contact {
+.footer__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
