@@ -5,6 +5,10 @@
     height: 85rem;
     display: grid;
     grid-template-columns: var(--grid-container);
+    //1243
+    @include responsive.max(77.6rem) {
+        margin-top: 100px ;
+        }
 
     &__inner {
         grid-column: inner;
