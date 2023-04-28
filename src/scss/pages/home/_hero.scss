@@ -24,7 +24,7 @@
     &__main {
         grid-area: main;
         position: relative;
-
+        // 480
         @include responsive.max(30rem) {
             padding: var(--gap-m) var(--gap-m);
         } 
@@ -41,38 +41,66 @@
     &__content {
         max-width: 60rem;
         width: 100%;
+        // 820
+        @include responsive.max(51.25rem) {
+            text-align: center;
+        }
     }
 
     &__title {
         margin: 2rem 0;
-        font-size: var(--font-size-7);
+        font-size: clamp(2.25rem, -3.75rem + 20vw, 6.25rem);
         color: #fff;
     }
 
     &__buttons {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--gap-m);
-        
-        @include responsive.max(40rem){
+        gap: var(--gap-m);       
+        // 820
+        @include responsive.max(51.25rem){
             justify-content: center;
             gap: var(--gap-s);
+        }
+        // 480
+        @include responsive.max(30rem) {
+            flex-direction: column;
+            align-items: center;
         }
     }
 
     &__button {
         @include button.default();
-        font-size: var(--font-size-3);
 
-        &-red {
-            @include button.default(
-            $background: var(--color-red));
+            &-red {
+                @include button.default(
+                $background: var(--color-red));
+            // 820
+            @include responsive.max(51.25rem) {
+                font-size: var(--font-size-2);
+                padding: 1rem;
+            }
+            // 480
+            @include responsive.max(30rem) {
+                font-size: var(--font-size-1);
+                padding: 0.5rem;
+            }
         }
+        // 820
+        @include responsive.max(51.25rem) {
+            font-size: var(--font-size-2);
+            padding: 1rem;
+        }
+        // 480
+            @include responsive.max(30rem) {
+                font-size: var(--font-size-1);
+                padding: 0.5rem;
+            }
     }
 
     &__arrow {
         display: flex;
-        justify-content: space-between;
+        gap: 1rem;
         transition: transform 0.5s;
 
         &:hover {
@@ -84,30 +112,27 @@
             }
         }
     }
-
-    &__more {
-        padding: 0 1rem;
-        color: #fff;
-    }
-
-    &__social {
-
-    } 
 }
-
-.facebook {
-    padding-right: 10px;
-    transition: color 0.2s;
-
+.social {
+    transition: 0.4s ease-out;
     &:hover {
-        svg path { fill: red};
-        transition: transform 0.2s;
+        transform: scale(1.2);
     }
-}
-
-.instagram {
-
-    &:hover {
-        svg path { fill: red}
+    &--facebook {
+        padding-right: 10px;
+        &:hover {
+            svg path{ 
+                transition: 1s ease-out;
+                fill: red;
+            };
+        }
     }
+
+    &--instagram {
+        &:hover {
+            svg path { 
+                transition: 1s ease-out;
+                fill: red}
+        }
+    }            
 }
