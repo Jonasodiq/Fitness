@@ -259,6 +259,31 @@ li {
 .footer__text {
   font-weight: 600;
 }
+.footer__link {
+  position: relative;
+}
+.footer__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+.footer__link:hover:after {
+  transform: scaleX(0.45);
+  transform-origin: bottom left;
+}
+.footer__link-member:hover:after {
+  transform: scaleX(0.63);
+}
+.footer__link-training:hover:after {
+  transform: scaleX(1);
+}
 .footer__share {
   display: flex;
   flex-direction: column;
@@ -334,9 +359,14 @@ li {
   max-width: 60rem;
   width: 100%;
 }
+@media screen and (max-width: 51.25rem) {
+  .hero__content {
+    text-align: center;
+  }
+}
 .hero__title {
   margin: 2rem 0;
-  font-size: var(--font-size-7);
+  font-size: clamp(2.25rem, -3.75rem + 20vw, 6.25rem);
   color: #fff;
 }
 .hero__buttons {
@@ -344,10 +374,16 @@ li {
   flex-wrap: wrap;
   gap: var(--gap-m);
 }
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 51.25rem) {
   .hero__buttons {
     justify-content: center;
     gap: var(--gap-s);
+  }
+}
+@media screen and (max-width: 30rem) {
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }
 .hero__button {
@@ -361,7 +397,6 @@ li {
   font-weight: normal;
   display: inline-block;
   text-decoration: none;
-  font-size: var(--font-size-3);
 }
 .hero__button:hover {
   background-color: var(--color-accent-200);
@@ -383,9 +418,33 @@ li {
   background-color: var(--color-accent-200);
   color: var(--color-light);
 }
+@media screen and (max-width: 51.25rem) {
+  .hero__button-red {
+    font-size: var(--font-size-2);
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .hero__button-red {
+    font-size: var(--font-size-1);
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 51.25rem) {
+  .hero__button {
+    font-size: var(--font-size-2);
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .hero__button {
+    font-size: var(--font-size-1);
+    padding: 0.5rem;
+  }
+}
 .hero__arrow {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   transition: transform 0.5s;
 }
 .hero__arrow:hover {
@@ -395,51 +454,51 @@ li {
 .hero__arrow:hover svg path {
   fill: red;
 }
-.hero__more {
-  padding: 0 1rem;
-  color: #fff;
+
+.social {
+  transition: 0.4s ease-out;
 }
-.facebook {
+.social:hover {
+  transform: scale(1.2);
+}
+.social--facebook {
   padding-right: 10px;
-  transition: color 0.2s;
 }
-.facebook:hover {
-  transition: transform 0.2s;
-}
-.facebook:hover svg path {
+.social--facebook:hover svg path {
+  transition: 1s ease-out;
   fill: red;
 }
-
-.instagram:hover svg path {
+.social--instagram:hover svg path {
+  transition: 1s ease-out;
   fill: red;
 }
 
 .promo {
-  height: 20rem;
+  height: 16rem;
   display: grid;
   grid-template-columns: var(--grid-container);
+  margin-top: 2rem;
 }
 .promo__inner {
   grid-column: inner;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-gap: 20px;
 }
-.promo__cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 87.5rem) {
+  .promo__inner {
+    padding-bottom: 20px;
+  }
 }
 .promo__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   width: 400px;
   height: 200px;
   background-image: url(assets/images/card-2.jpg);
   background-repeat: no-repeat;
-  padding: 20px 0 0 40px;
+  padding: 32px 0 0 40px;
   margin: 0 20px;
 }
 .promo__card.promo__card-1 {
@@ -540,6 +599,11 @@ li {
   height: 85rem;
   display: grid;
   grid-template-columns: var(--grid-container);
+}
+@media screen and (max-width: 77.6rem) {
+  .news {
+    margin-top: 100px;
+  }
 }
 .news__inner {
   grid-column: inner;
