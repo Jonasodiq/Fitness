@@ -1,35 +1,39 @@
+@use '../../utilities/responsive';
+
 .promo {
-    height: 20rem;
+    height: 16rem;
     display: grid;
     grid-template-columns: var(--grid-container);
+    margin-top: 2rem;
 
     &__inner {
         grid-column: inner;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        grid-gap: 20px;
+        //1400
+        @include responsive.max(87.5rem) {
+            padding-bottom: 20px;
+        }
     }
 
     &__cards {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  
     }
 
     &__card {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items:flex-start;
         width: 400px;
         height: 200px;
         background-image: url(assets/images/card-2.jpg);
         background-repeat: no-repeat;
-        padding: 20px 0 0 40px;
+        padding: 32px 0 0 40px;
         margin: 0 20px;
+
         &.promo__card-1 {
-            background-image: url(assets/images/card-1.jpg); 
-            
+            background-image: url(assets/images/card-1.jpg);  
         }
     }
 
