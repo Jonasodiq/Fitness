@@ -3,7 +3,7 @@
     position: fixed;
     z-index: 999;
     height: 100px;
-    width: 100%;
+    min-width: 100%;
     display: grid;
     grid-template-columns: var(--grid-container);
 
