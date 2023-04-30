@@ -1,20 +1,22 @@
 @use '../../utilities/responsive';
 
 .promo {
-    height: 16rem;
+    min-height: 16rem;
     display: grid;
     grid-template-columns: var(--grid-container);
-    margin-top: 2rem;
+    margin: 2rem 0;
 
     &__inner {
         grid-column: inner;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-        grid-gap: 20px;
-        //1400
-        @include responsive.max(87.5rem) {
-            padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        //1323px
+        @include responsive.max(1323px) {
+           row-gap: 1rem;
         }
+
     }
 
     &__cards {
@@ -30,7 +32,7 @@
         background-image: url(assets/images/card-2.jpg);
         background-repeat: no-repeat;
         padding: 32px 0 0 40px;
-        margin: 0 20px;
+        margin: 0 10px;
 
         &.promo__card-1 {
             background-image: url(assets/images/card-1.jpg);  
