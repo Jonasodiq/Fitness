@@ -114,7 +114,7 @@
     }
 }
 .social {
-    transition: 0.4s ease-out;
+    transition: 0.3s ease-out;
     &:hover {
         transform: scale(1.2);
     }
@@ -122,7 +122,7 @@
         padding-right: 10px;
         &:hover {
             svg path{ 
-                transition: 1s ease-out;
+                transition: 0.2s ease-out;
                 fill: red;
             };
         }
@@ -131,7 +131,7 @@
     &--instagram {
         &:hover {
             svg path { 
-                transition: 1s ease-out;
+                transition: 0.2s ease-out;
                 fill: red}
         }
     }            
