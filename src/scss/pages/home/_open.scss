@@ -1,5 +1,5 @@
 .open {
-    height: 48rem;
+    min-height: 48rem;
     display: grid;
     grid-template-columns: var(--grid-container);
 
@@ -24,19 +24,20 @@
     &__box {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
         gap: 1rem;
     }
 
     &__text {
-        margin-bottom: -12px;
-        color: var(--color-accent-200)
+        padding-top: 20px;
+        color: var(--color-accent-200);
     }
     
     &__main {
         grid-area: open__main;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     &__card {
