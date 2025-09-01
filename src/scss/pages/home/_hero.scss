@@ -98,20 +98,35 @@
             }
     }
 
-    &__arrow {
+    &__link {
         display: flex;
         gap: 1rem;
         transition: transform 0.5s;
 
-        &:hover {
+        &:hover{
             transform: translate(0, 0.3rem);
             color: red;
-            
-            svg path {
-                fill: red;
-            }
+        }
+
+        &:hover .hero__arrow line,
+        &:hover .hero__arrow polyline {
+            stroke: red;
         }
     }
+
+    &__arrow {
+        width: 40px;
+        height: 40px;
+       
+        display: inline-block;
+        vertical-align: middle;
+        transform-origin: center center; /* vrid runt mitten */
+        animation: arrow-bounce 1.5s ease-in-out infinite alternate;
+
+        & line, polyline {
+            transition: stroke 0.3s ease;
+        }
+    }    
 }
 .social {
     transition: 0.3s ease-out;
@@ -132,7 +147,39 @@
         &:hover {
             svg path { 
                 transition: 0.2s ease-out;
-                fill: red}
+                fill: red
+            }
         }
     }            
+}
+
+
+// =====
+
+// .hero__arrow {
+//   width: 40px;
+//   height: 40px;
+//   display: inline-block;
+//   vertical-align: middle;
+//   transform-origin: center center; /* vrid runt mitten */
+//   animation: arrow-bounce 1.5s ease-in-out infinite alternate;
+// }
+
+// .hero__arrow line,
+// .hero__arrow polyline {
+//   stroke: white;
+//   transition: stroke 0.3s ease;
+// }
+
+/* Hover-effekt: ändra färg */
+// .hero__link:hover .hero__arrow line,
+// .hero__link:hover .hero__arrow polyline {
+//   stroke: red;
+// }
+
+/* Keyframes för upp-och-ner-gung */
+@keyframes arrow-bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(10px); } /* gunga ner 10px */
+  100% { transform: translateY(0); }    /* tillbaka upp */
 }

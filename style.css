@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --section-gap: 8rem;
   --section-gap-inner: calc( var(--section-gap) * 0.75);
@@ -72,6 +73,10 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.display-none {
+  display: none !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -442,17 +447,28 @@ li {
     padding: 0.5rem;
   }
 }
-.hero__arrow {
+.hero__link {
   display: flex;
   gap: 1rem;
   transition: transform 0.5s;
 }
-.hero__arrow:hover {
+.hero__link:hover {
   transform: translate(0, 0.3rem);
   color: red;
 }
-.hero__arrow:hover svg path {
-  fill: red;
+.hero__link:hover .hero__arrow line, .hero__link:hover .hero__arrow polyline {
+  stroke: red;
+}
+.hero__arrow {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  transform-origin: center center; /* vrid runt mitten */
+  animation: arrow-bounce 1.5s ease-in-out infinite alternate;
+}
+.hero__arrow line, .hero__arrow polyline {
+  transition: stroke 0.3s ease;
 }
 
 .social {
@@ -473,6 +489,19 @@ li {
   fill: red;
 }
 
+/* Hover-effekt: ändra färg */
+/* Keyframes för upp-och-ner-gung */
+@keyframes arrow-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  } /* gunga ner 10px */
+  100% {
+    transform: translateY(0);
+  } /* tillbaka upp */
+}
 .promo {
   min-height: 16rem;
   display: grid;
@@ -574,7 +603,7 @@ li {
   color: #fff;
 }
 .promo2__description {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
 }
 .promo2__rec {
   position: absolute;
@@ -723,7 +752,7 @@ li {
   width: 26rem;
   height: 30rem;
   padding: 2.5rem;
-  margin: 10;
+  margin: 0;
 }
 .open__card--title {
   padding-bottom: 20px;
